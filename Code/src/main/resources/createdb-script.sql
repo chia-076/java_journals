@@ -5,7 +5,8 @@ CREATE TABLE user
     enabled BIT(1) NOT NULL,
     login_name VARCHAR(255) NOT NULL,
     pwd VARCHAR(255) NOT NULL,
-    role VARCHAR(255) NOT NULL
+    role VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
 );
 CREATE TABLE item
 (
@@ -34,6 +35,7 @@ CREATE TABLE subscription
 (
     id BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     date DATETIME NOT NULL,
-    user_id BIGINT(20) NOT NULL
+    user_id BIGINT(20) NOT NULL,
+    category_id BIGINT(20) NOT NULL
 );
 CREATE UNIQUE INDEX UK_tq3cq3gmsss8jjyb2l5sb1o6k ON subscription (user_id);

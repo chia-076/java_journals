@@ -12,53 +12,63 @@ import javax.persistence.PrePersist;
 @Entity(name = "subscription")
 public class Subscription {
 
-	@Id
-	@GeneratedValue
-	private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	@ManyToOne(optional = false)
-	private User user;
+    @ManyToOne(optional = false)
+    private User user;
 
-	@Column(nullable = false)
-	private Date date;
+    @Column(nullable = false)
+    private Date date;
 
-	@ManyToOne(optional= false)
-	private Category category;
+    @ManyToOne(optional = false)
+    private Category category;
 
-	@PrePersist
-	private void onPersist() {
-		date = new Date();
-	}
+    public Subscription() {
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Subscription(Long id, User user, Date date, Category category) {
+        this.id = id;
+        this.user = user;
+        this.date = date;
+        this.category = category;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @PrePersist
+    private void onPersist() {
+        date = new Date();
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Date getDate() {
-		return date;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-	public Category getCategory() {
-		return category;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

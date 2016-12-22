@@ -1,0 +1,21 @@
+Demo Video
+
+
+Feature introduced :
+
+AKKA integration with Spring
+ - SpringExtension
+ - SpringActorProducer
+ - AkkaHelper
+
+AKKA actors:
+ - NewJournalNotifierActor, actor for listening to newly added journal
+ - ScheduledJournalNotifierActor, scheduled actor for notification broadcast. (every 5 minutes)
+                                     
+
+Service:
+ - EmailService, responsible for sending notification email
+ - SubscriptionService,responsible for find Subscriber based on subscribed Category
+
+Repository:
+ - SubscriptionRepository, responsible for subscriber data retrieval 

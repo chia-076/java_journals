@@ -1,5 +1,6 @@
 package com.crossover.trial.journals.service;
 
+import java.util.Collection;
 import java.util.Optional;
 
 import com.crossover.trial.journals.model.User;
@@ -12,4 +13,5 @@ public interface UserService {
 
     User findById(Long id);
 
+    Collection<User> findAll();
 }

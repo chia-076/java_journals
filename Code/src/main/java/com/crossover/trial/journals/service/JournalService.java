@@ -4,6 +4,7 @@ import com.crossover.trial.journals.model.Journal;
 import com.crossover.trial.journals.model.Publisher;
 import com.crossover.trial.journals.model.User;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface JournalService {
@@ -15,4 +16,6 @@ public interface JournalService {
 	Journal publish(Publisher publisher, Journal journal, Long categoryId);
 
 	void unPublish(Publisher publisher, Long journalId);
+
+    Collection<Journal> getLatestJournals();
 }

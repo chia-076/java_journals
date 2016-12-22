@@ -22,6 +22,15 @@ public class Publisher {
     @Column(nullable = false)
     private String name;
 
+    public Publisher() {
+    }
+
+    public Publisher(Long id, User user, String name) {
+        this.id = id;
+        this.user = user;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
